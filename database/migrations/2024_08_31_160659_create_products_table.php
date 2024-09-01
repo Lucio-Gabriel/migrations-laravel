@@ -18,12 +18,16 @@ return new class extends Migration
             $table->id();
 
             // Nome do porduto (name) - string
+            $table->string('name');
 
             // Código do produto - string - não pode repetir (code)
+            $table->string('code')->unique();
 
             // quantidade do produto - int - por default quantidade = 0
+            $table->integer('quantity')->default(0);
 
-            $table->timestamps(); // quando o registro foi criado e quanto foi atualizado
+            // quando o registro foi criado e quanto foi atualizado
+            $table->timestamps();
         });
     }
 
