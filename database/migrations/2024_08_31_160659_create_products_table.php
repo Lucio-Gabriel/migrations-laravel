@@ -26,8 +26,13 @@ return new class extends Migration
             // quantidade do produto - int - por default quantidade = 0
             $table->integer('quantity')->default(0);
 
+            // observações sobre o produto - text - pode ser null (obs)
+            $table->text('obs')->nullable();
+
             // quando o registro foi criado e quanto foi atualizado
             $table->timestamps();
+
+
         });
     }
 
